@@ -44,7 +44,7 @@ function convertNames(convertData){
                             tempLat = lat; tempLon = lon;
                              
                             // FIX - start forcast function weatherApi();
-                            presentWeather();
+                            presentWeather(); 
   
                 })
     
@@ -83,9 +83,10 @@ function presentWeather () {
                     $("#cWind").text("Wind: " + tempWind);
                     $("#cHumidity").text("Humidity: " + tempHumidity);
 
-            })
-
-}
+                        })
+                        
+                            weatherApi();    
+                    }
 
 
 
@@ -104,18 +105,35 @@ function weatherApi(){
                 return response.json();
         })
             .then(function (data) {
+               
                 
+                // loop for gathering 5 day forcast data, !!index 1!! starts at 12pm,
+                //increments 8 at a time for 24hrs later based on 3 hr indexes
+                var i2 = 1; //variable for rendering forecast boxes in a separate loop
+                for (i = 1; i < 41; i += 8) {
                 var tempCity = data.city.name; // holds current city name
-                var tempTemp = data.list[0].main.temp; // holds current temp
-                var tempWind = data.list[0].wind.speed; // holds wind speed
-                var tempHumidity = data.list[0].main.humidity // holds humidty data
-                var tempIcon = data.list[0].weather[0].icon // holds icon data
-                console.log(data);
+                var tempTemp = data.list[i].main.temp; // holds current temp
+                var tempWind = data.list[i].wind.speed; // holds wind speed
+                var tempHumidity = data.list[i].main.humidity // holds humidty data
+                var tempIcon = data.list[i].weather[0].icon // holds icon data
+                console.log("5day forecast " + data); console.log("i" + i);
                 // tests for all data for current day --VV--
         console.log("City: " + tempCity + " | Date: " + currentDate + " | Temp: "
         + tempTemp + " | Wind: " + tempWind + " | Humidity: " + tempHumidity + " | Icon: " + tempIcon); 
+
+                        // renders 5 day forecast weather to boxes
+                    
+                    $("#fDate"+i2).text(currentDate);
+                    // icon code here!!!!!!!!!!!!
+                    $("#fTemp"+i2).text("Temp: " + tempTemp + " F");
+                    $("#fWind"+i2).text("Wind: " + tempWind);
+                    $("#fHumidity"+i2).text("Humidity: " + tempHumidity); 
+                    i2++; console.log("i2=" + i2);
+                }
                     
             })
+
+
 
 }
 
