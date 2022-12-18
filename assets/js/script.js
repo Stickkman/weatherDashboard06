@@ -4,6 +4,7 @@ var citySearchedEl = document.querySelector('input').value
 var citySearched =''; // global variable for city input
 var tempLat ='';
 var tempLon ='';
+var currentDate = dayjs().format('M/D/YYYY'); // variable for current date
 var geoKey ="c321f3556bedeb7d653f0b65cb45d13b"
 
 // function to handle searches after search button is pressed
@@ -50,7 +51,7 @@ function convertNames(convertData){
 function weatherApi(){
     console.log("Passed Lat: " + tempLat + "\nPassed Lon: " + tempLon); //test if variables passed to next function
     // custom url for current city data retrieval based on lat and lons
-    var latLonUrl ="https://api.openweathermap.org/data/2.5/forecast?lat=" + tempLat + "&lon=" + tempLon + "&appid=" + geoKey;
+    var latLonUrl ="https://api.openweathermap.org/data/2.5/forecast?lat=" + tempLat + "&lon=" + tempLon + "&units=imperial&appid=" + geoKey;
 
     fetch(latLonUrl)
         .then(function (response) {
@@ -62,7 +63,16 @@ function weatherApi(){
                 return response.json();
         })
             .then(function (data) {
+                
+                var tempCity = data.city.name; // holds current city name
+                var tempTemp = data.list[0].main.temp; // holds current temp
+                var tempWind = data.list[0].wind.speed; // holds wind speed
+                var tempHumidity = data.list[0].main.humidity // holds humidty data
+                var tempIcon = data.list[0].weather[0].icon // holds icon data
                 console.log(data);
+                // tests for all data for current day --VV--
+        console.log("City: " + tempCity + " | Date: " + currentDate + " | Temp: "
+        + tempTemp + " | Wind: " + tempWind + " | Humidity: " + tempHumidity + " | Icon: " + tempIcon); 
                     
             })
 
