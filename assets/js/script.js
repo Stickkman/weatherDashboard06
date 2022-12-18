@@ -74,7 +74,15 @@ function presentWeather () {
                 // tests for all data for current day --VV--
         console.log("City: " + tempCity + " | Date: " + currentDate + " | Temp: "
         + tempTemp + " | Wind: " + tempWind + " | Humidity: " + tempHumidity + " | Icon: " + tempIcon); 
-                    
+                 
+                    // renders current weather to page
+                    $("#cName").text(tempCity);
+                    $("#cDate").text(currentDate);
+                    // icon code here!!!!!!!!!!!!
+                    $("#cTemp").text("Temp: " + tempTemp + " F");
+                    $("#cWind").text("Wind: " + tempWind);
+                    $("#cHumidity").text("Humidity: " + tempHumidity);
+
             })
 
 }
