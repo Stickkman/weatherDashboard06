@@ -18,7 +18,7 @@ function searchHandler(event) {
 // function to convert input city name to geo coordinates  
 function convertNames(convertData){
     // api query url based upon city entered with key auto added    
-    var geoApi = "http://api.openweathermap.org/geo/1.0/direct?q=" + convertData + "&limit=1&appid=" + geoKey;
+    var geoApi = "https://api.openweathermap.org/geo/1.0/direct?q=" + convertData + "&limit=1&appid=" + geoKey;
         fetch(geoApi)
             .then(function (response) {
                 console.log(response.status);
