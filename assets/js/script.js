@@ -43,7 +43,7 @@ function convertNames(convertData){
                         console.log("Converted Lat: " + lat + "\nConverted Lon: " + lon); //test for conversion
                             tempLat = lat; tempLon = lon;
                              
-                            // FIX - start forcast function weatherApi();
+                          
                             presentWeather(); 
   
                 })
@@ -77,11 +77,15 @@ function presentWeather () {
                  
                     // renders current weather to page
                     $("#cName").text(tempCity);
-                    $("#cDate").text(currentDate);
-                    // icon code here!!!!!!!!!!!!
+                    $("#cDate").text(currentDate); 
+                    
+                    var iconUrl = "https://openweathermap.org/img/wn/" + tempIcon + ".png"
+                    $("#cIcon").append($('<img>', {src: iconUrl}));  // appends icon for current day from custom url
+                    
+
                     $("#cTemp").text("Temp: " + tempTemp + " F");
-                    $("#cWind").text("Wind: " + tempWind);
-                    $("#cHumidity").text("Humidity: " + tempHumidity);
+                    $("#cWind").text("Wind: " + tempWind + " MPH");
+                    $("#cHumidity").text("Humidity: " + tempHumidity + " %");
 
                         })
                         
@@ -122,12 +126,18 @@ function weatherApi(){
         + tempTemp + " | Wind: " + tempWind + " | Humidity: " + tempHumidity + " | Icon: " + tempIcon); 
 
                         // renders 5 day forecast weather to boxes
+                       
+                        var baseDate = dayjs().add(i2, 'day'); // adds a day to date per loop
+                        result = dayjs(baseDate).format('M/D/YYYY'); // convert format to usual
+                    $("#fDate"+i2).text(result);
                     
-                    $("#fDate"+i2).text(currentDate);
-                    // icon code here!!!!!!!!!!!!
                     $("#fTemp"+i2).text("Temp: " + tempTemp + " F");
                     $("#fWind"+i2).text("Wind: " + tempWind + " MPH");
                     $("#fHumidity"+i2).text("Humidity: " + tempHumidity + " %"); 
+
+                    var iconUrl = "https://openweathermap.org/img/wn/" + tempIcon + ".png"
+                    $("#fIcon"+i2).append($('<img>', {src: iconUrl}));  // appends icon for forecast from custom url
+
                     i2++; console.log("i2=" + i2);
                 }
                     
