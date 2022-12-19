@@ -78,8 +78,10 @@ function presentWeather () {
                     // renders current weather to page
                     $("#cName").text(tempCity);
                     $("#cDate").text(currentDate); 
-                    
+// FIX DOUBLE ICONS ON ADDITIONAL SEARCHES
                     var iconUrl = "https://openweathermap.org/img/wn/" + tempIcon + ".png"
+                   
+                    
                     $("#cIcon").append($('<img>', {src: iconUrl}));  // appends icon for current day from custom url
                     
 
@@ -140,7 +142,11 @@ function weatherApi(){
 
                     i2++; console.log("i2=" + i2);
                 }
-                    
+                  
+                // adds search history buttons
+                
+                $('#history').append('<button class="is-fullwidth button is-link p-5 mb-2" type="button">'+ tempCity+'</button>');
+
             })
 
 
