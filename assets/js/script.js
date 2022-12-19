@@ -126,8 +126,8 @@ function weatherApi(){
                     $("#fDate"+i2).text(currentDate);
                     // icon code here!!!!!!!!!!!!
                     $("#fTemp"+i2).text("Temp: " + tempTemp + " F");
-                    $("#fWind"+i2).text("Wind: " + tempWind);
-                    $("#fHumidity"+i2).text("Humidity: " + tempHumidity); 
+                    $("#fWind"+i2).text("Wind: " + tempWind + " MPH");
+                    $("#fHumidity"+i2).text("Humidity: " + tempHumidity + " %"); 
                     i2++; console.log("i2=" + i2);
                 }
                     
