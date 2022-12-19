@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stickkman's Weather Dashboard</title>
-
     <!-- link to Bulma css library (bootstrap alternative)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- link to base css stylesheet-->
@@ -23,7 +22,6 @@
 </header>
 
 <body class="custom-bg"> <!-- overrides Bulma body background color-->
-
    
     <div class = "columns pt-2"> <!--container to hold city search form-->
         <div class="column is-one-quarter boxes">
@@ -42,7 +40,6 @@
         </p>
       </div>
       </form>
-
     <!-- current weather box section -->
           </div> <div class = " columns pt-5 is-full p-5">
           <div class ="column is-full box boxes is-size-4 has-background-link has-text-white">
@@ -53,102 +50,68 @@
           <span id = "cTemp"></span><br>
           <span id = "cWind"></span><br>
           <span id = "cHumidity"></span>
-          
-          
-            
         </div></div>
-
     <!-- end current weather box -->
     </div></div>
-    
     <!-- section to be polulated with search history-->
     <div  class = "columns ml-0 mr-6">
       <div class="column is-one-quarter box boxes label field">
-      
-        <ul> History </ul>
+       <ul> History </ul>
         <div id ="history"></div>
       </div>
-    
       <!-- section to insert 5 day forecast-->
 <!-- day 1 forecast -->
      <div class = " columns pt-5 p-5">
       <div class ="column  box boxes is-size-4 has-background-info has-text-white">
       <!-- empty spans to insert weather data -->
-      
       <span id = "fDate1"></span>
       <span id = "fIcon1"></span><br>
       <span id = "fTemp1"></span><br>
       <span id = "fWind1"></span><br>
       <span id = "fHumidity1"></span>
-      fadsfdsfdsfadd
-</div> </div>
+      </div> </div>
 <!-- day 2 forecast       -->
 <div class = " columns pt-5 p-5">
   <div class ="column  box boxes is-size-4 has-background-info has-text-white">
   <!-- empty spans to insert weather data -->
-  
   <span id = "fDate2"></span>
   <span id = "fIcon2"></span><br>
   <span id = "fTemp2"></span><br>
   <span id = "fWind2"></span><br>
   <span id = "fHumidity2"></span>
-  fadsfdsfdsfadd
 </div> </div>
-
 <!-- day 3 forecast -->
 <div class = " columns pt-5 p-5">
   <div class ="column  box boxes is-size-4 has-background-info has-text-white">
   <!-- empty spans to insert weather data -->
-  
   <span id = "fDate3"></span>
   <span id = "fIcon3"></span><br>
   <span id = "fTemp3"></span><br>
   <span id = "fWind3"></span><br>
   <span id = "fHumidity3"></span>
-  fadsfdsfdsfadd
 </div> </div>
 <!-- day 4 forecast -->
 <div class = " columns pt-5 p-5">
   <div class ="column  box boxes is-size-4 has-background-info has-text-white">
   <!-- empty spans to insert weather data -->
-  
   <span id = "fDate4"></span>
   <span id = "fIcon4"></span><br>
   <span id = "fTemp4"></span><br>
   <span id = "fWind4"></span><br>
   <span id = "fHumidity4"></span>
-  fadsfdsfdsfadd
 </div> </div>
 <!-- day 5 forcast -->
 <div class = " columns pt-5 p-5"> 
   <div class ="column  box boxes is-size-4 has-background-info has-text-white">
   <!-- empty spans to insert weather data -->
-  
   <span id = "fDate5"></span>
   <span id = "fIcon5"></span><br>
   <span id = "fTemp5"></span><br>
   <span id = "fWind5"></span><br>
   <span id = "fHumidity5"></span>
-  fadsfdsfdsfadd
-
-
-
-
-
-
   </div>
-</div>
-      
+  </div>
       <div><div>
-
-        
-
-
-
-
-
-      
-    
     <!-- link for jquery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--link for dayjs-->

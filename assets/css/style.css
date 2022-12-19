@@ -1,13 +1,9 @@
-.custom-bg {
+/* stylesheet -- this is only to override bulma background color and alter predefined box class */
+.custom-bg { 
     background-color: rgb(191, 217, 241);
     min-height:900px; 
-
-  }
+}
 
 .boxes {
 margin-left: 15px; margin-top: 5px;
 }
-
-/* .bCustom {
-  background-color: rgb(14, 62, 219);
-} */
