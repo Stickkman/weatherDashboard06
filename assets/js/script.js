@@ -125,4 +125,5 @@ function weatherApi(){
 
 $(function () { // waits for page to load before any code is executed
         $('#searchBtn').on('click', searchHandler); // listener for search button
+            //*create button handlers for history buttons to repopulate appropriate data from localstorage* 
   });
